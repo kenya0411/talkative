@@ -1,0 +1,297 @@
+@charset "UTF-8"
+
+
+=fixHead()
+	// 固定ヘッダー
+
+	display: block
+	position: fixed
+	background-color: rgba(255,255,255,0.8)
+	margin: 0
+	padding: 20px 0 10px
+	width: 100%
+	max-width: initial
+	z-index: 100
+	@include tab
+		padding: 16px 0
+
+
+
+
+//--------------------------------------------------- 
+// ハンバーガーメニュー
+//--------------------------------------------------- 
+//
+
+/////////////////////////////////////////////////////////////////
+//navi1
+
+=navi1
+	@include tab
+		.white nav
+			top: 78px
+			@include mb
+				top: 72px
+		header nav
+			display: none
+			position: absolute
+			top: 60px
+			width: 100%
+			left: 0
+			z-index: 5
+			background-color: rgba(255,255,255,0.9)
+			border-top: 1px solid #eee
+
+			ul
+				margin: 0 auto
+				display: block
+				width: 100%
+				flex-direction: column
+				li
+					text-align: center
+					border-bottom: 1px solid #eee
+					padding: 6px 0 6px 0
+					width: 100%
+					margin: 0 auto
+					a
+						padding-top: 10px
+						padding-bottom: 10px
+						display: flex
+						justify-content: center
+						align-items: center
+						word-break: break-all
+						width: 100%
+						height: 100%
+						text-align: center
+						border: none
+
+					&:last-child
+						position: relative
+						display: flex
+						@include a-color(#fff)
+						justify-content: center
+						align-items: center
+						word-break: break-all
+						width: 100%
+						height: 100%
+						text-align: center
+						transition: all 0.5s ease
+						border: none
+						.btn
+							width: 100%
+						a
+							@include a-color(#fff)
+							width: 100%
+		//開閉ボタン
+		#nav_toggle
+			display: block
+			width: 40px
+			height: 40px
+			position: relative
+			z-index: 100
+			color: black
+
+			div 
+				position: relative
+				top: 8px
+			
+			span
+				display: block
+				height: 3px
+				background: #000
+				position: absolute
+				width: 100%
+				-webkit-transition: 0.5s ease-in-out
+				-moz-transition: 0.5s ease-in-out
+				transition: 0.5s ease-in-out 
+			
+				&:nth-child(1)
+					top: 0px
+				&:nth-child(2)
+					top: 12px	
+				&:nth-child(3)
+					top: 24px
+			@include mb
+
+				width: 26px
+				height: 26px
+				div
+					top: 1px
+				span
+					height: 3px
+					&:nth-child(1)
+						top: 0px
+					&:nth-child(2)
+						top: 8px	
+					&:nth-child(3)
+						top: 16px
+				
+	//開閉ボタンopen時
+	.open #nav_toggle 
+		span:nth-child(1) 
+			top: 12px
+			-webkit-transform: rotate(135deg)
+			-moz-transform: rotate(135deg)
+			transform: rotate(135deg)
+			
+		span:nth-child(2) 
+			width: 0
+			left: 50%
+			
+		span:nth-child(3) 
+			top: 12px
+			-webkit-transform: rotate(-135deg)
+			-moz-transform: rotate(-135deg)
+			transform: rotate(-135deg)
+			
+
+	//メニューを開閉した後にナビメニューが消えない対処法
+	@include tabup
+		header nav
+			display: block!important
+		 
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+///navi2	 
+/////////////////////////////////////////////////////////////////
+
+=navi2($bg,$color,$opacity)
+	#nav_toggle
+		position: fixed
+		top: 20px
+		right: 20px
+		height: 32px
+		cursor: pointer
+		> div
+			position: relative
+			width: 36px
+		span
+			width: 100%
+			height: 1px
+			left: 0
+			display: block
+			background: #333
+			position: absolute
+			transition: top .5s ease, -webkit-transform .6s ease-in-out
+			transition: transform .6s ease-in-out, top .5s ease
+			transition: transform .6s ease-in-out, top .5s ease, -webkit-transform .6s ease-in-out
+			&:nth-child(1)
+				top: 0
+			&:nth-child(2)
+				top: 14px
+			&:nth-child(3)
+				top: 28px
+		&:hover span
+			&:nth-child(1)
+				top: 4px
+			&:nth-child(3)
+				top: 23px
+		@include mb
+			height: 22px
+			> div
+				position: relative
+				width: 30px
+			span
+				&:nth-child(1)
+					top: 0
+				&:nth-child(2)
+					top: 10px
+				&:nth-child(3)
+					top: 20px
+			&:hover span
+				&:nth-child(1)
+					top: 4px
+				&:nth-child(3)
+					top: 16px
+	.open #nav_toggle span
+		background: $color
+		&:nth-child(1)
+			top: 15px
+			-webkit-transform: rotate(45deg)
+			transform: rotate(45deg)
+		&:nth-child(2)
+			top: 15px
+			width: 0
+			left: 50%
+		&:nth-child(3)
+			top: 15px
+			-webkit-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+
+	/* z-index*/
+
+	#nav_toggle
+		z-index: 1000
+
+	#container
+		z-index: 900
+
+	nav
+		background: $bg
+		color: #fff
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 990
+		text-align: center
+		display: flex
+		visibility: hidden
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		opacity: 0
+		transition: opacity .6s ease, visibility .6s ease
+		a
+			display: block
+			color: #fff
+			text-decoration: none
+			padding: 10px 0
+			transition: color .6s ease
+			&:hover
+				color: #666
+		ul
+			list-style: none
+			margin-bottom: 50vh
+			li
+				opacity: 0
+				-webkit-transform: translateX(200px)
+				transform: translateX(200px)
+				transition: opacity .2s ease, -webkit-transform .6s ease
+				transition: transform .6s ease, opacity .2s ease
+				transition: transform .6s ease, opacity .2s ease, -webkit-transform .6s ease
+				&:nth-child(2)
+					transition-delay: .1s
+				&:nth-child(3)
+					transition-delay: .2s
+				&:nth-child(4)
+					transition-delay: .3s
+				&:nth-child(5)
+					transition-delay: .4s
+				&:nth-child(6)
+					transition-delay: .5s
+				&:nth-child(7)
+					transition-delay: .6s
+
+	/* open*/
+
+	.open
+		overflow: hidden
+		nav
+			visibility: visible
+			opacity: $opacity
+			li
+				opacity: 1
+				-webkit-transform: translateX(0)
+				transform: translateX(0)
+				transition: opacity .9s ease, -webkit-transform 1s ease
+				transition: transform 1s ease, opacity .9s ease
+				transition: transform 1s ease, opacity .9s ease, -webkit-transform 1s ease
+		 
+/////////////////////////////////////////////////////////////////

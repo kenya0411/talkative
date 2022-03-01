@@ -1,0 +1,10 @@
+{
+
+   "url" : "http://localhost/index.php",
+   "img" : "./**/img/*.{jpg,jpeg,png,gif,svg}",
+   "imgdest" : "./img-min/"
+
+
+
+
+}

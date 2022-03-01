@@ -1,0 +1,471 @@
+.hvr-icon-up {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-icon-up .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-up:hover .hvr-icon, .hvr-icon-up:focus .hvr-icon, .hvr-icon-up:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-up;
+  animation-name: hvr-icon-up;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+main {
+  margin-bottom: 50px;
+}
+main .mainTitle {
+  margin-top: 20px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 50px;
+  background: #2b52d2;
+  background: -moz-linear-gradient(#2b52d2);
+  background: -webkit-linear-gradient(#2b52d2);
+  background: linear-gradient(135deg, #599bde 40%, #2b52d2 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$grd-color1', endColorstr='$grd-color2',GradientType=1 );
+}
+main .mainTitle h2 {
+  font-size: 22px;
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.main .talkBlock {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.main .talkBlock:after {
+  content: "";
+  border-bottom: 1px dotted #aaa;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+.main .talkBlock .timeSize, .main .talkBlock .responseBlock .timeSize {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #7e7e7e;
+  margin-left: 4px;
+}
+.main .talkBlock .nameSize, .main .talkBlock .responseBlock .nameSize {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.main .talkBlock .upper, .main .talkBlock .responseBlock .upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main .talkBlock .nameBlock, .main .talkBlock .responseBlock .nameBlock {
+  display: flex;
+  align-items: baseline;
+}
+.main .talkBlock .textBlock, .main .talkBlock .responseBlock .textBlock {
+  margin-top: 0.5em;
+}
+.main .talkBlock .textBlock p, .main .talkBlock .responseBlock .textBlock p {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.5em;
+}
+.main .talkBlock:nth-last-of-type(1) .textBlock, .main .talkBlock .responseBlock:nth-last-of-type(1) .textBlock {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.main .talkBlock:nth-last-of-type(1) .textBlock:after, .main .talkBlock .responseBlock:nth-last-of-type(1) .textBlock:after {
+  display: none;
+}
+.main .talkBlock .replyBlock, .main .talkBlock .responseBlock .replyBlock {
+  display: flex;
+  align-items: center;
+}
+.main .talkBlock .replyBlock .replyIcon, .main .talkBlock .responseBlock .replyBlock .replyIcon {
+  max-width: 16px;
+  height: 13px;
+  margin-left: 4px;
+}
+.main .talkBlock .replyBlock .btn, .main .talkBlock .responseBlock .replyBlock .btn {
+  width: 100%;
+  height: auto;
+  min-width: 70px;
+}
+.main .talkBlock .replyBlock .btn a, .main .talkBlock .responseBlock .replyBlock .btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  padding: 4px 4px;
+  width: 100%;
+  font-size: 12px;
+  font-size: 1.2rem;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #175eb5;
+  color: #175eb5;
+  transition: all 0.5s ease;
+}
+@media (min-width: 769px) {
+  .main .talkBlock .replyBlock .btn a:hover, .main .talkBlock .responseBlock .replyBlock .btn a:hover {
+    opacity: 0.5;
+    transition-duration: 0.5s;
+  }
+}
+.main .originalBlock .timeSize {
+  font-size: 10px;
+  font-size: 1rem;
+}
+.main .originalBlock .nameSize {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.main .originalBlock .textBlock p {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.main .talkBlock .responseBlock {
+  margin-top: 1em;
+  padding-left: 2em;
+  position: relative;
+}
+.main .talkBlock .responseBlock:before {
+  content: "";
+  border-left: 1px solid #000;
+  width: 1px;
+  height: calc(100% - 10px);
+  position: absolute;
+  left: 0.6em;
+  top: 5px;
+  margin: auto;
+}
+.main .nowPage_response {
+  display: none !important;
+}
+
+.postCount {
+  display: flex;
+  flex-wrap: wrap;
+  border-collapse: collapse;
+}
+.postCount .headTable th, .postCount .headTable td {
+  background-color: #589bde;
+  color: #fff;
+  font-weight: 700;
+}
+.postCount th, .postCount td {
+  border: 1px solid #ddd;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 12px;
+  line-height: 1.2em;
+}
+.postCount li {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.postCount li .wrap {
+  display: inline-block;
+  border-bottom: 1px solid #ddd;
+}
+.postCount li span {
+  color: red;
+}
+@media (max-width: 480px) {
+  .postCount th, .postCount td {
+    font-size: 14px;
+    font-size: 1.4rem;
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+.postPage .heading {
+  position: relative;
+  border-left: 3px solid #2B53D1;
+  padding-left: 0.5em;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.1em;
+}
+.postPage form {
+  margin-top: 24px;
+}
+.postPage textarea {
+  border: 1px solid #aaa;
+  padding: 16px;
+  width: 400px;
+  line-height: 1.2em;
+  font-size: 16px;
+  font-size: 1.6rem;
+  height: 200px;
+}
+.postPage .btnWrap {
+  margin-top: 16px;
+  width: 400px;
+}
+.postPage [type="submit"], .postPage button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+  margin: auto;
+  text-decoration: none;
+  background: #2B53D1;
+  text-align: center;
+  border: 1px solid #2B53D1;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  padding: 8px 16px;
+}
+.postPage [type="submit"]:hover, .postPage button:hover {
+  background: #fff;
+  color: #2B53D1;
+  border: 1px solid #2B53D1;
+  box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  main .mainTitle {
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+  main .mainTitle h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
+  .main .talkBlock {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+  .main .talkBlock .timeSize, .main .talkBlock .responseBlock .timeSize {
+    font-size: 11px;
+    font-size: 1.1rem;
+  }
+  .main .talkBlock .nameSize, .main .talkBlock .responseBlock .nameSize {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+  .main .talkBlock .textBlock, .main .talkBlock .responseBlock .textBlock {
+    margin-top: 0.5em;
+  }
+  .main .talkBlock .textBlock p, .main .talkBlock .responseBlock .textBlock p {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  .main .talkBlock .replyBlock .btn, .main .talkBlock .responseBlock .replyBlock .btn {
+    min-width: initial;
+  }
+  .main .talkBlock .replyBlock .btn a, .main .talkBlock .responseBlock .replyBlock .btn a {
+    font-size: 11px;
+    font-size: 1.1rem;
+    padding: 2px 4px 1px;
+    line-height: 1.1em;
+  }
+  .main .talkBlock .replyBlock img, .main .talkBlock .responseBlock .replyBlock img {
+    display: none;
+  }
+  .main .talkBlock .responseBlock:before {
+    height: calc(100%);
+    top: 0px;
+  }
+
+  .postPage .heading {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+  .postPage form {
+    margin-top: 16px;
+  }
+  .postPage textarea {
+    padding: 8px;
+    width: 100%;
+  }
+  .postPage .btnWrap {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+/*--------------------------------------------------- */
+/* .approvalBlock */
+/*--------------------------------------------------- */
+.main .approvalWrap textarea {
+  height: 150px;
+  width: 100%;
+}
+.main .approvalWrap .replyBlock {
+  display: none !important;
+}
+.main .approvalWrap .talkBlock.originalBlock, .main .approvalWrap .talkBlock:not(.approvalBlock) {
+  margin-bottom: 0;
+  padding-bottom: 16px;
+}
+.main .approvalWrap .talkBlock.originalBlock:after, .main .approvalWrap .talkBlock:not(.approvalBlock):after {
+  content: "";
+  display: none;
+  /* style */
+}
+.main .approvalWrap .responseBlock .timeSize, .main .approvalWrap .talkBlock:not(.approvalBlock) .timeSize {
+  font-size: 10px;
+  font-size: 1rem;
+}
+.main .approvalWrap .responseBlock .nameSize, .main .approvalWrap .talkBlock:not(.approvalBlock) .nameSize {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.main .approvalWrap .responseBlock .textBlock p, .main .approvalWrap .talkBlock:not(.approvalBlock) .textBlock p {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.main .approvalWrap .talkBlock .responseBlock {
+  padding-left: 0;
+  position: relative;
+}
+.main .approvalWrap .talkBlock .responseBlock:before {
+  display: none;
+}
+.main .approvalWrap .btnFlex {
+  margin-top: 16px;
+  display: flex;
+}
+.main .approvalWrap .btnFlex .no1 {
+  margin-right: 24px;
+}
+.main .approvalWrap .btnFlex .no2 button {
+  width: 100%;
+  height: 100%;
+  background: #9c9c9c;
+  border: 1px solid #9c9c9c;
+  color: #fff;
+}
+.main .approvalWrap .btnFlex .no2 button:hover {
+  background: #fff;
+  color: #9c9c9c;
+  border: 1px solid #9c9c9c;
+  box-shadow: none;
+}
+
+/*--------------------------------------------------- */
+/* .dmWrap */
+/*--------------------------------------------------- */
+.dmList .dmWrap li {
+  border: 1px solid #aaa;
+  padding: 16px;
+  margin-top: -1px;
+}
+.dmList .dmWrap li .time {
+  font-size: 10px;
+  font-size: 1rem;
+  color: #aaa;
+  display: inline-block;
+}
+.dmList .dmWrap li .ngWords {
+  color: #888;
+}
+.dmList .dmWrap li .nameTitle {
+  color: #104074;
+}
+.dmList .dmWrap li .nameTitle i {
+  margin-left: 0.4em;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+.dmList .dmWrap li a {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 16px 0;
+  color: #000;
+}
+.dmList .dmWrap li a:visited {
+  color: #000;
+}
+.dmList .dmWrap li p {
+  margin-top: 0.2em;
+  color: #444;
+  font-size: 12px;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.dmShowSec .dmWrap .ngWords {
+  font-weight: 400;
+  color: #888;
+}
+.dmShowSec .dmWrap li {
+  border-bottom: 1px dotted #ddd;
+  padding: 16px 0;
+}
+.dmShowSec .dmWrap li span {
+  display: inline-block;
+}
+.dmShowSec .dmWrap li .time {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #aaa;
+  display: inline-block;
+}
+.dmShowSec .dmWrap li a {
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 16px 0;
+  color: #000;
+}
+.dmShowSec .dmWrap li a:visited {
+  color: #000;
+}
+.dmShowSec .dmWrap li p {
+  margin-top: 0.2em;
+  font-size: 12px;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+.dmShowSec .dmWrap li p i {
+  color: #2B53D1;
+  margin-left: 0.2em;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.dmShowSec .dmWrap .my_user a, .dmShowSec .dmWrap .my_user span {
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: #888;
+}
+.dmShowSec .dmWrap .my_user p {
+  color: #888;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+.dmShowSec .dmWrap li span {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.dmShowSec .dmWrap li p {
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+}
+.dmShowSec form {
+  margin-bottom: 32px;
+}

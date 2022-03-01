@@ -1,0 +1,431 @@
+@charset "UTF-8"
+
+@import "../../_import.sass"
+
+main
+	margin-bottom: 50px
+	.mainTitle
+		margin-top: 20px
+		padding-top: 24px
+		padding-bottom: 24px
+		margin-bottom: 50px
+		h2
+			@include rem(22)
+			color: #fff
+
+		$grd-color1: #599bde
+		$gradient: #2b52d2
+		$grd-color2: #2b52d2
+		background: $grd-color2 /* Old browsers */
+		background: -moz-linear-gradient($gradient) 
+		background: -webkit-linear-gradient($gradient) 
+		background: linear-gradient(135deg, $grd-color1 40%,$grd-color2 80%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$grd-color1', endColorstr='$grd-color2',GradientType=1 )
+
+.main
+	.talkBlock
+		margin-bottom: 32px
+		padding-bottom: 32px
+		position: relative
+
+		&:after
+			content: ""
+			border-bottom: 1px dotted #aaa
+			width: 100%
+			height: 1px
+			position: absolute
+			bottom: 0
+			margin: 0
+	.talkBlock,.talkBlock .responseBlock
+		.timeSize
+			@include rem(12)
+			color: #7e7e7e
+			margin-left: 4px
+		.nameSize
+			@include rem(18)
+			font-weight: 700
+		.upper
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+		.nameBlock
+			display: flex
+			align-items: baseline
+		.textBlock
+			margin-top: 0.5em
+
+			p
+				@include rem(18)
+				line-height: 1.5em
+		&:nth-last-of-type(1)
+			.textBlock
+				margin-bottom: 0
+				padding-bottom: 0
+				&:after
+					display: none
+		.replyBlock
+			display: flex
+			align-items: center
+			.replyIcon
+				max-width: 16px
+				height: 13px
+				margin-left: 4px
+			.btn
+				$bgcolor1: #fff
+				$color1: #175eb5
+				width: 100%
+				height: auto
+				min-width: 70px
+				a
+					display: flex
+					justify-content: center
+					align-items: center
+					word-break: break-all
+					padding: 4px 4px
+					width: 100%
+					@include rem(12)
+					height: 100%
+					text-decoration: none
+					background: $bgcolor1
+					text-align: center
+					border: 1px solid $color1
+					color: $color1
+					transition: all 0.5s ease
+					@include tabup
+						&:hover
+							opacity: 0.5
+							transition-duration: 0.5s
+	.originalBlock
+
+		.timeSize
+			@include rem(10)
+		.nameSize
+			@include rem(14)
+		.textBlock
+			p
+
+				@include rem(14)
+
+	.talkBlock
+		.responseBlock
+			margin-top: 1em
+			padding-left: 2em
+			position: relative
+			&:before
+				content: ""
+				border-left: 1px solid #000
+				width: 1px
+				height: calc(100% - 10px)
+				position: absolute
+				left: 0.6em
+				top: 5px
+				margin: auto
+			// &:after
+			// 	content: ""
+			// 	width: 5px
+			// 	height: 5px
+			// 	position: absolute
+			// 	left: calc(0.5em - 2px)
+			// 	border-radius: 50%
+			// 	top: 5px
+			// 	background: #000
+			// 	margin: auto
+	.nowPage_response
+		display: none!important
+
+
+.postCount
+	display: flex
+	flex-wrap: wrap
+	border-collapse: collapse
+	.headTable
+		th,td
+			background-color: #589bde
+			color: #fff
+			font-weight: 700
+	th,td
+		border: 1px solid #ddd
+		font-weight: 400
+		@include rem(16)
+		padding: 12px
+		line-height: 1.2em
+	li
+		width: 100%
+		margin-bottom: 12px
+		.wrap
+			display: inline-block
+			border-bottom: 1px solid #ddd
+		span
+			color: red
+
+
+	@include mb
+		th,td
+			@include rem(14)
+			text-align: left
+			padding: 8px
+
+.postPage
+	.heading
+		position: relative
+		border-left: 3px solid $color-main
+		padding-left: 0.5em
+		@include rem(18)
+		line-height: 1.1em
+	form
+		margin-top: 24px
+	textarea
+		border: 1px solid #aaa
+		padding: 16px
+		width: 400px
+		line-height: 1.2em
+		@include rem(16)
+		height: 200px
+
+	.btnWrap
+		margin-top: 16px
+		width: 400px
+
+	[type="submit"],button
+		$bgcolor: $color-main
+		$color: #fff
+		display: flex
+		justify-content: center
+		align-items: center
+		word-break: break-all
+		width: 100%
+		height: 100%
+		max-width: 150px
+		margin: auto
+		text-decoration: none
+		background: $bgcolor
+		text-align: center
+		border: 1px solid $bgcolor
+		color: $color
+		font-size: 16px
+		transition: all 0.5s ease
+		padding: 8px 16px
+		&:hover
+			background: $color
+			color: $bgcolor
+			border: 1px solid $bgcolor
+			box-shadow: none
+
+@include mb
+
+
+	main
+		.mainTitle
+			margin-top: 20px
+			padding-top: 16px
+			padding-bottom: 16px
+			margin-bottom: 24px
+			h2
+				@include rem(18)
+				color: #fff
+
+	
+	.main
+		.talkBlock
+			margin-bottom: 24px
+			padding-bottom: 24px
+
+		.talkBlock,.talkBlock .responseBlock
+			.timeSize
+				@include rem(11)
+			.nameSize
+				@include rem(16)
+
+			.textBlock
+				margin-top: 0.5em
+
+				p
+					@include rem(14)
+			.replyBlock
+				.btn
+					min-width: initial
+					a
+						@include rem(11)
+						padding: 2px 4px 1px
+						line-height: 1.1em 
+				img
+					display: none
+		// .originalBlock
+
+		// 	.timeSize
+		// 		@include rem(10)
+		// 	.nameSize
+		// 		@include rem(14)
+		// 	.textBlock
+		// 		p
+
+		// 			@include rem(14)
+
+		.talkBlock 
+			.responseBlock
+				&:before
+					height: calc(100%)
+					top: 0px
+
+
+	.postPage
+		.heading
+			@include rem(16)
+		form
+			margin-top: 16px
+		textarea
+			padding: 8px
+			width: 100%
+
+		.btnWrap
+			margin-top: 12px
+			width: 100%
+
+/*--------------------------------------------------- */
+/* .approvalBlock
+/*--------------------------------------------------- */		
+.main	
+	.approvalWrap
+		textarea
+			height: 150px
+			width: 100%
+		.replyBlock
+			display: none!important
+		.talkBlock.originalBlock,.talkBlock:not(.approvalBlock)
+			margin-bottom: 0
+			padding-bottom: 16px
+			&:after
+				content: ""
+				display: none
+				/* style */
+		.responseBlock,.talkBlock:not(.approvalBlock)
+
+			.timeSize
+				@include rem(10)
+			.nameSize
+				@include rem(14)
+			.textBlock
+				p
+
+					@include rem(14)
+
+		.talkBlock
+			.responseBlock
+				padding-left: 0
+				position: relative
+				&:before
+					display: none
+		.btnFlex
+			margin-top: 16px
+			display: flex
+			.no1
+				margin-right: 24px
+			.no2
+				button
+					$bgcolor: #9c9c9c
+					$color: #fff
+					width: 100%
+					height: 100%
+					// max-width: 150px
+					background: $bgcolor
+					border: 1px solid $bgcolor
+					color: $color
+					&:hover
+						background: $color
+						color: $bgcolor
+						border: 1px solid $bgcolor
+						box-shadow: none
+
+
+/*--------------------------------------------------- */
+/* .dmWrap
+/*--------------------------------------------------- */
+.dmList
+	.dmWrap
+		li
+			border: 1px solid #aaa
+			padding: 16px
+			margin-top: -1px
+			.time
+				@include rem(10)
+				color: #aaa
+				display: inline-block
+			.ngWords
+				color: #888
+			.nameTitle
+				color: #104074
+				
+				i
+					margin-left: 0.4em
+					@include rem(16)
+
+			a
+				@include rem(16)
+				padding: 16px 0
+				color: #000
+				&:visited
+					color: #000
+
+					
+			p
+				margin-top: 0.2em
+				color: #444
+				@include rem(12)
+				display: inline-block
+
+
+
+
+.dmShowSec
+	.dmWrap
+		.ngWords
+			font-weight: 400
+			color: #888
+		li
+			border-bottom: 1px dotted #ddd
+			padding: 16px 0
+			span
+				display: inline-block
+			.time
+				@include rem(12)
+				color: #aaa
+				display: inline-block
+			a
+				@include rem(16)
+				padding: 16px 0
+				color: #000
+				&:visited
+					color: #000
+
+					
+			p
+				margin-top: 0.2em
+				@include rem(12)
+				display: inline-block
+				i
+					color: $color-main
+					margin-left: 0.2em
+					@include rem(12)
+
+		.my_user
+			a,span
+				@include rem(14)
+				color: #888
+			p
+				color: #888
+				@include rem(14)
+
+				
+
+
+		li
+			span
+				@include rem(16)
+				font-weight: 700
+			p
+				@include rem(16)
+				line-height: 1.5em
+	form
+		margin-bottom: 32px
+
+

@@ -1,0 +1,178 @@
+@charset "UTF-8"
+
+@import "../../_import.sass"
+
+
+/* -------------------------------------------------- */
+/* 共通ヘッダー 
+/*-------------------------------------------------- */
+header
+	margin: 20px auto 0
+	left: 0
+	right: 0
+	top: 0
+	z-index: 10
+	width: 100%
+	color: $color-nav
+
+	.flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+		h1
+			img
+				max-width: 180px
+				max-height: 37px
+	.navi
+		display: flex
+		align-items: center
+
+
+	.userInfo
+		margin-right: 24px
+		padding-right: 24px
+		position: relative
+		&:after
+			content: ""
+			border-right: 1px dotted #ddd
+			width: 1px
+			max-height: 30px
+			height: 100%
+			position: absolute
+			top: 0
+			right: 0
+			margin: 0
+		.wrap
+			display: flex
+			align-items: center
+			span
+				@include rem(16)
+		img
+			max-width: 16px
+			height: 19px
+			position: relative
+			margin-right: 4px
+			@include tabup
+				top: -2px
+
+	.navFlex
+
+		display: flex
+		li
+			@include rem(15)
+			display: flex
+			align-items: center
+			line-height: 1.1em
+			a,a:visited
+				color: #000
+				&:hover
+					color: #888
+					transition-duration: 0.5
+
+			@include tabup
+				&:after
+					content: "|"
+					margin-left: 8px
+					margin-right: 8px
+			&:nth-last-of-type(2)
+				&:after
+					content: ""
+			&:nth-last-of-type(1)
+				&:after
+					display: none
+			.btn
+				$bgcolor1: #37c688
+				$color1: #fff
+				width: 100%
+				height: auto
+				max-width: 200px
+				a
+					display: flex
+					justify-content: center
+					align-items: center
+					word-break: break-all
+					padding: 8px 16px
+					border-radius: 50px
+					width: 100%
+					height: 100%
+					text-decoration: none
+					background: $bgcolor1
+					text-align: center
+					border: 1px solid $bgcolor1
+					color: $color1
+					transition: all 0.5s ease
+					@include tabup
+						&:hover
+							background: $color1
+							color: $bgcolor1
+							border: 1px solid $bgcolor1
+							box-shadow: none
+
+
+
+
+// 固定ヘッダー
+header.white
+	@include fixHead
+
+
+@include tabup
+	#nav_toggle
+		display: none
+
+//ナビゲーションメニュー
+@include tab
+	@include navi1
+	// @include navi2(#fff,#333,0.95)
+
+
+
+
+/* -------------------------------------------------- */
+/* レスポンシブ
+/*-------------------------------------------------- */
+
+@include tab
+
+
+	header
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.userInfo
+			padding-right: 0
+			margin-right: 0
+			&:after
+				display: none
+		.navi
+			.userInfo
+				order: 0
+				margin-right: 12px
+				position: relative
+				top: -2px
+				img
+					max-width: 14px
+					height: 17px
+					top: -1px
+				span
+					@include rem(14)
+			#nav_toggle
+				order: 1
+
+		.flex
+			h1
+				img
+					max-width: 150px
+					max-height: 30px
+		nav
+			ul
+				.btnWrap
+					padding-top: 0
+					padding-bottom: 0
+					.btn
+						max-width: initial
+						a
+							border-radius: 0
+							padding-top: 16px
+							padding-bottom: 16px
+

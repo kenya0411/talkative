@@ -1,0 +1,47 @@
+@charset "UTF-8"
+
+
+// -------------------------------------------------- */
+// 鍵カッコ
+//--------------------------------------------------- */
+
+=kagikakko($kagi)
+	span
+		content: ''
+		width: 20px
+		height: 20px
+		position: absolute
+		display: inline-block
+	.kagi01
+		border-left: solid 1px $kagi
+		border-bottom: solid 1px $kagi
+		left: 0
+		bottom: 0
+	.kagi02
+		border-right: solid 1px $kagi
+		border-top: solid 1px $kagi
+		right: 0
+		top: 0
+	.kagi03
+		border-right: solid 1px $kagi
+		border-bottom: solid 1px $kagi
+		right: 0
+		bottom: 0
+	.kagi04
+		border-left: solid 1px $kagi
+		border-top: solid 1px $kagi
+		left: 0
+		top: 0
+	&:before
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translate(-50%, -50%)
+		@include rem(20)
+		color: #999999
+
+
+// -------------------------------------------------- */
+// html
+//--------------------------------------------------- */
+//<span class="kagi01"></span><span class="kagi02"></span><span class="kagi03"></span><span class="kagi04"></span>

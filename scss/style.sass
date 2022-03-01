@@ -1,0 +1,236 @@
+@charset "UTF-8"
+@import "import.sass"
+
+/*--------------------------------------------------- */
+/* #mainimg
+/*--------------------------------------------------- */
+#mainimg
+	position: relative
+	height: 600px
+	.swiper-slide
+		img
+			width: 100%
+			height: 600px
+			object-fit: cover
+	.mbPad
+		position: absolute
+		height: 600px
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		z-index: 2
+		display: flex
+		justify-content: center
+		align-items: center
+		img
+			max-width: 702px
+			height: auto
+			width: 100%
+
+
+/*--------------------------------------------------- */
+/* primary
+/*--------------------------------------------------- */
+#primary
+	position: relative
+	padding-top: 80px
+	height: 400px
+	.outer
+		&:before,&:after
+			content: ''/*何も入れない*/
+			display: inline-block/*忘れずに！*/
+			background-size: contain
+			vertical-align: middle
+			background-repeat: no-repeat
+			position: absolute
+			z-index: -2
+		&:before
+			top: 0
+			left: 0
+			width: 355px/*画像の幅*/
+			height: 316px/*画像の高さ*/
+			background-image: url(../../img/bg-img1.jpg)
+			@include pcsmall
+				width: 245px/*画像の幅*/
+				height: 218px/*画像の高さ*/
+		&:after
+			bottom: 0
+			right: 0
+			width: 296px/*画像の幅*/
+			height: 310px/*画像の高さ*/
+			background-image: url(../../img/bg-img2.jpg)
+			@include pcsmall
+				width: 198px/*画像の幅*/
+				height: 207px/*画像の高さ*/
+	h2
+		font-family: $font-family-rodinb
+		@include rem(34)
+		text-align: center
+		color: #444444
+		margin-bottom: 24px
+		line-height: 1.2em
+
+	p
+		@include rem(15)
+		line-height: 1.5em
+		max-width: 650px
+		margin: auto
+
+/*--------------------------------------------------- */
+/* secondary
+/*--------------------------------------------------- */
+#secondary
+	background-color: #DDDDDD
+	padding-top: 34px
+	padding-bottom: 24px
+	img
+		max-width: 320px
+		width: 100%
+	ul
+		display: flex
+		justify-content: space-between
+	li
+		width: calc(33.333% - 13.333px)
+	h3
+		@include rem(20)
+		text-align: center
+		font-weight: 400
+		margin-top: 16px
+	a
+		color: #545454
+	figure
+		@include hoverImg1
+		i
+			bottom: 47px
+			right: 24px
+			font-size: 2.5em
+
+		@include ie
+			&:hover img, &.hover img
+				opacity: 0.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------- */
+/* レスポンシブ
+/*--------------------------------------------------- */
+@include tab
+
+	/*--------------------------------------------------- */
+	/* #mainimg
+	/*--------------------------------------------------- */
+	#mainimg
+		height: 400px
+		.swiper-slide
+			img
+				height: 400px
+		.mbPad
+			height: 400px
+
+			img
+				max-width: 686px
+		@include mb
+
+			height: 200px
+			.swiper-slide
+				img
+					height: 200px
+			.mbPad
+				height: 200px
+
+	/*--------------------------------------------------- */
+	/* primary
+	/*--------------------------------------------------- */
+	#primary
+		padding-top: 80px
+		height: auto
+		padding-bottom: 80px
+		.outer
+
+			&:before
+
+				width: 230px/*画像の幅*/
+				height: 205px/*画像の高さ*/
+
+			&:after
+				display: none
+
+				// width: 169px/*画像の幅*/
+				// height: 177px/*画像の高さ*/
+				// opacity: 0.4
+
+
+		h2
+			@include rem(28)
+			@include mb
+				@include rem(24)
+				text-align: left
+				.none
+					display: none
+
+		@include mb
+			height: auto
+			padding-top: 70px
+			padding-bottom: 70px
+
+
+			.outer
+				&:before
+
+					width: 149px/*画像の幅*/
+					height: 133px/*画像の高さ*/
+
+			&:after
+
+				opacity: 0.3
+
+
+
+	/*--------------------------------------------------- */
+	/* secondary
+	/*--------------------------------------------------- */
+	#secondary
+		padding-top: 34px
+		padding-bottom: 24px
+
+		ul
+			flex-wrap: wrap
+
+		li
+			width: calc(50% - 10px)
+			&:nth-of-type(3)
+				/* style */
+				margin: 30px auto 0
+
+		h3
+			@include rem(20)
+		@include mb
+			padding-bottom: 70px
+			padding-top: 70px
+			li
+				width: calc(100%)
+				margin: 0 auto 50px
+				&:nth-of-type(3)
+					margin: 0 auto 0

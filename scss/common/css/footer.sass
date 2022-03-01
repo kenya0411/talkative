@@ -1,0 +1,83 @@
+@charset "UTF-8"
+
+@import "../../_import.sass"
+
+/*--------------------------------------------------- */
+/* footer
+/*--------------------------------------------------- */
+footer
+	a
+		@include foot-link
+
+
+#footGoto 
+	@include footGoto 
+
+
+
+
+.footerNav
+	.wrapper
+		position: fixed
+		z-index: 10
+		bottom: 0
+		width: 100%
+		ul
+			display: flex
+			background-color: #fff
+			height: 50px
+			border-top: 1px solid #ddd
+
+			justify-content: space-between
+		li
+			width: 33.333%
+			display: flex
+			align-items: center
+			justify-content: center
+			position: relative
+			a
+				width: 100%
+				height: 100%
+
+				display: flex
+				align-items: center
+				justify-content: center
+				position: relative
+			img,svg
+				fill: #1058B1
+			&:before
+				border-left: 1px solid #ddd
+				content: ""
+				width: 1px
+				height: 100%
+				position: absolute
+				left: 0
+
+				
+			&.num1
+				img,svg
+					max-width: 22px
+					height: 20px
+			&.num2
+				img,svg
+					max-width: 27px
+					height: 21px
+			&.num3
+				img,svg
+					max-width: 25px
+					height: 23px
+			&.num4
+				img,svg
+					max-width: 21px
+					height: 22px
+
+				&:after
+					border-left: 1px solid #ddd
+					content: ""
+					width: 1px
+					height: 100%
+					position: absolute
+					right: 0
+		.now_mentionstimeline,.now_timeline,.now_tweetpost,.now_dmpage
+			svg
+				fill: #000!important

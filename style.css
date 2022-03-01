@@ -1,0 +1,369 @@
+@charset "UTF-8";
+.hvr-icon-up {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-icon-up .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-up:hover .hvr-icon, .hvr-icon-up:focus .hvr-icon, .hvr-icon-up:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-up;
+  animation-name: hvr-icon-up;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+/*--------------------------------------------------- */
+/* #mainimg */
+/*--------------------------------------------------- */
+#mainimg {
+  position: relative;
+  height: 600px;
+}
+#mainimg .swiper-slide img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+#mainimg .mbPad {
+  position: absolute;
+  height: 600px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainimg .mbPad img {
+  max-width: 702px;
+  height: auto;
+  width: 100%;
+}
+
+/*--------------------------------------------------- */
+/* primary */
+/*--------------------------------------------------- */
+#primary {
+  position: relative;
+  padding-top: 80px;
+  height: 400px;
+}
+#primary .outer:before, #primary .outer:after {
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -2;
+}
+#primary .outer:before {
+  top: 0;
+  left: 0;
+  width: 355px;
+  height: 316px;
+  background-image: url(../../img/bg-img1.jpg);
+}
+@media (max-width: 1000px) {
+  #primary .outer:before {
+    width: 245px;
+    height: 218px;
+  }
+}
+#primary .outer:after {
+  bottom: 0;
+  right: 0;
+  width: 296px;
+  height: 310px;
+  background-image: url(../../img/bg-img2.jpg);
+}
+@media (max-width: 1000px) {
+  #primary .outer:after {
+    width: 198px;
+    height: 207px;
+  }
+}
+#primary h2 {
+  font-family: "rodinb", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-size: 34px;
+  font-size: 3.4rem;
+  text-align: center;
+  color: #444444;
+  margin-bottom: 24px;
+  line-height: 1.2em;
+}
+#primary p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  max-width: 650px;
+  margin: auto;
+}
+
+/*--------------------------------------------------- */
+/* secondary */
+/*--------------------------------------------------- */
+#secondary {
+  background-color: #DDDDDD;
+  padding-top: 34px;
+  padding-bottom: 24px;
+}
+#secondary img {
+  max-width: 320px;
+  width: 100%;
+}
+#secondary ul {
+  display: flex;
+  justify-content: space-between;
+}
+#secondary li {
+  width: calc(33.333% - 13.333px);
+}
+#secondary h3 {
+  font-size: 20px;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 16px;
+}
+#secondary a {
+  color: #545454;
+}
+#secondary figure {
+  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+}
+#secondary figure * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#secondary figure img {
+  max-width: 100%;
+  vertical-align: top;
+  background-color: #000000;
+}
+#secondary figure i {
+  position: absolute;
+  bottom: 35px;
+  right: 15px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  font-size: 3em;
+  line-height: 1em;
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.6, -0.8, 0.735, 0.045);
+  transition: all 0.4s cubic-bezier(0.6, -0.8, 0.735, 0.045);
+}
+#secondary figure a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+}
+#secondary figure a:before, #secondary figure a:after {
+  width: 1px;
+  height: 0;
+  background-color: #ffffff;
+}
+#secondary figure a:before {
+  right: 0;
+  top: 0;
+}
+#secondary figure a:after {
+  left: 0;
+  bottom: 0;
+}
+#secondary figure:before, #secondary figure:after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  opacity: 0.8;
+}
+#secondary figure a:before, #secondary figure a:after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  opacity: 0.8;
+}
+#secondary figure:before, #secondary figure:after {
+  height: 1px;
+  width: 0%;
+}
+#secondary figure:before {
+  top: 0;
+  left: 0;
+}
+#secondary figure:after {
+  bottom: 0;
+  right: 0;
+}
+#secondary figure:hover img, #secondary figure.hover img {
+  filter: brightness(50%);
+}
+#secondary figure:hover a:before, #secondary figure.hover a:before, #secondary figure:hover a:after, #secondary figure.hover a:after {
+  height: 100%;
+  color: #444;
+}
+#secondary figure:hover i, #secondary figure.hover i {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  opacity: 0.7;
+  color: #fff;
+}
+#secondary figure:hover:before, #secondary figure.hover:before, #secondary figure:hover:after, #secondary figure.hover:after {
+  width: 100%;
+}
+#secondary figure:hover:before, #secondary figure.hover:before, #secondary figure:hover:after, #secondary figure.hover:after, #secondary figure:hover a:before, #secondary figure.hover a:before, #secondary figure:hover a:after, #secondary figure.hover a:after {
+  opacity: 0.1;
+}
+#secondary figure i {
+  bottom: 47px;
+  right: 24px;
+  font-size: 2.5em;
+}
+@media all and (-ms-high-contrast: none) {
+  #secondary figure:hover img, #secondary figure.hover img {
+    opacity: 0.5;
+  }
+}
+@supports (-ms-ime-align: auto) {
+  #secondary figure:hover img, #secondary figure.hover img {
+    opacity: 0.5;
+  }
+}
+
+/*--------------------------------------------------- */
+/* レスポンシブ */
+/*--------------------------------------------------- */
+@media (max-width: 768px) {
+  /*--------------------------------------------------- */
+  /* #mainimg */
+  /*--------------------------------------------------- */
+  #mainimg {
+    height: 400px;
+  }
+  #mainimg .swiper-slide img {
+    height: 400px;
+  }
+  #mainimg .mbPad {
+    height: 400px;
+  }
+  #mainimg .mbPad img {
+    max-width: 686px;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  #mainimg {
+    height: 200px;
+  }
+  #mainimg .swiper-slide img {
+    height: 200px;
+  }
+  #mainimg .mbPad {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*--------------------------------------------------- */
+  /* primary */
+  /*--------------------------------------------------- */
+  #primary {
+    padding-top: 80px;
+    height: auto;
+    padding-bottom: 80px;
+  }
+  #primary .outer:before {
+    width: 230px;
+    height: 205px;
+  }
+  #primary .outer:after {
+    display: none;
+  }
+  #primary h2 {
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  #primary h2 {
+    font-size: 24px;
+    font-size: 2.4rem;
+    text-align: left;
+  }
+  #primary h2 .none {
+    display: none;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  #primary {
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  #primary .outer:before {
+    width: 149px;
+    height: 133px;
+  }
+  #primary:after {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  /*--------------------------------------------------- */
+  /* secondary */
+  /*--------------------------------------------------- */
+  #secondary {
+    padding-top: 34px;
+    padding-bottom: 24px;
+  }
+  #secondary ul {
+    flex-wrap: wrap;
+  }
+  #secondary li {
+    width: calc(50% - 10px);
+  }
+  #secondary li:nth-of-type(3) {
+    /* style */
+    margin: 30px auto 0;
+  }
+  #secondary h3 {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  #secondary {
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+  #secondary li {
+    width: calc(100%);
+    margin: 0 auto 50px;
+  }
+  #secondary li:nth-of-type(3) {
+    margin: 0 auto 0;
+  }
+}

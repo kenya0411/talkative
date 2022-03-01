@@ -1,0 +1,65 @@
+@charset "UTF-8"
+
+// メディアクエリー
+
+$pcbig: 1201px // PC
+$pc: 1200px // PC
+$pcsmallup: 1001px // PC
+$pcsmall: 1000px // PC
+$tabup: 769px
+$tab: 768px // タブレット
+$mbup: 481px 
+$mb: 480px  // スマホ
+
+@mixin pcbig 
+  @media (min-width: ($pcbig)) 
+    @content
+
+@mixin pc 
+  @media (max-width: ($pc)) 
+    @content
+
+@mixin tabup 
+  @media (min-width: ($tabup)) 
+    @content
+
+@mixin tab 
+  @media (max-width: ($tab)) 
+    @content
+
+
+@mixin mbup 
+  @media (min-width: ($mbup)) 
+    @content
+
+@mixin mb 
+  @media (max-width: ($mb)) 
+    @content
+
+
+@mixin pcsmallup
+  @media (min-width: ($pcsmallup)) 
+    @content
+
+@mixin pcsmall 
+  @media (max-width: ($pcsmall)) 
+    @content
+
+@mixin ie
+  @media all and (-ms-high-contrast: none)
+    @content
+  @supports (-ms-ime-align: auto)
+    @content
+@mixin ie11
+  @media all and (-ms-high-contrast: none)
+    @content
+@mixin ipad
+  .ipad
+    @content
+
+@mixin mediaMax($mediaMax) 
+  @media (max-width: ($mediaMax)) 
+    @content
+@mixin mediaMin($mediaMin) 
+  @media (min-width: ($mediaMin)) 
+    @content

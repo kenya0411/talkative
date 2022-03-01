@@ -1,0 +1,59 @@
+@charset "UTF-8"
+
+// 変数
+=rem($size)
+	font-size: $size + px
+	font-size: $size / 10 * 1rem
+
+
+//ベースフォント
+$font-size-base: 62.5%
+$font-family-meiryo: メイリオ,"Meiryo UI", "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "Noto Sans Japanese", roboto, sans-serif
+
+$font-family-hiragino: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif
+$font-family-gothic: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", sans-serif
+$font-family-yumincho: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif
+$font-family-hiraginomincho: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif
+
+
+//--------------------------------------------------- 
+// webフォント(fontface)
+//--------------------------------------------------- 
+//
+//
+//
+=matisseb
+	@font-face 
+		font-family: 'matisseb'
+		src: url('/common/font/matisse-b.woff') format('woff'),url('/common/font/matisse-b.otf') format('truetype')
+		font-display: swap
+		font-weight: 700
+=matissem
+	@font-face 
+		font-family: 'matissem'
+		src: url('/common/font/matisse-m.woff') format('woff'),url('/common/font/matisse-m.otf') format('truetype')
+		font-display: swap
+		font-weight: 400
+=rodinb
+	@font-face 
+		font-family: 'rodinb'
+		src: url('/common/font/rodin-b.woff') format('woff'),url('/common/font/rodin-b.otf') format('truetype')
+		font-display: swap
+		font-weight: 700
+=century
+	@font-face 
+		font-family: 'century'
+		src: url('/common/font/rodin-b.woff') format('woff'),url('/common/font/century.ttf') format('truetype')
+		font-display: swap
+		font-weight: 400
+
+
+
+//--------------------------------------------------- 
+// webフォント
+//--------------------------------------------------- 
+
+$font-family-matisseb: 'matisseb',$font-family-yumincho
+$font-family-matissem: 'matissem',$font-family-yumincho
+$font-family-rodinb: 'rodinb',$font-family-gothic
+$font-family-century: 'century',serif

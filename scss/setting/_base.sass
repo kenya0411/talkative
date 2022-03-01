@@ -1,0 +1,104 @@
+@charset "UTF-8"
+
+
+// -------------------------------------------------- 
+// 余白
+//--------------------------------------------------- 
+$mbPad: 20px
+
+
+
+// -------------------------------------------------- 
+// IE対策
+//--------------------------------------------------- 
+
+//トリミング
+=img
+	object-fit: cover
+	width: 100%
+	font-family: 'object-fit: cover;' //IE対策
+
+
+
+
+  
+
+
+// -------------------------------------------------- */
+// TOPへ戻る
+//--------------------------------------------------- */
+
+=footGoto 
+	position: fixed
+	right: 8px
+	bottom: 8px
+	a 
+		display: flex
+		justify-content: center
+		align-items: center
+		color: $color-main
+		background: #fff
+		@include rem(12)
+		text-decoration: none
+		opacity: 0.9
+		padding: 1.7em 0 0
+		width: 80px/*幅*/
+		height: 80px/*高さ*/
+		border-radius: 50%/*角丸*/
+		transition-duration: 1s
+		font-family: $font-family-yumincho
+
+		&:before
+			font-family: "Font Awesome 5 Free"
+			content: '\f102'
+			font-weight: 700
+			position: absolute
+			top: 0.5em
+			@include rem(22)
+			@media all and (-ms-high-contrast: none)
+				// margin: auto
+				left: 50%
+				transform: translate(-50%, 0)
+		&:hover 
+			opacity: 0.7
+			transition-duration: 0.5s
+
+
+	@include tab
+		a
+			width: 50px/*幅*/
+			height: 50px/*高さ*/
+			span
+				display: none
+
+			&:before
+				top: 0.5em
+				@include rem(24)
+
+//--------------------------------------------------- 
+// #thanks
+//--------------------------------------------------- 
+=thanksMail
+	#thanks
+		margin-bottom: 100px
+		img
+			max-width: 350px
+			margin: auto
+		p
+			max-width: 700px
+			margin: 30px auto 0
+			@include rem(15)
+			line-height: 1.5em
+				
+		.btn
+			@include btn-btn($color-main,#fff)
+			cursor: pointer
+			height: 50px
+			max-width: 250px
+			@include rem(18)
+			font-weight: 700
+			margin: 70px auto 0
+			line-height: 1em
+			padding-top: 4px
+			input
+				height: 100%

@@ -1,0 +1,94 @@
+@charset "UTF-8"
+
+@import "../../_import.sass"
+
+
+html
+	font-size: $font-size-base
+	font-family: $font-family-gothic
+	color: $color-text
+body
+	margin: 0
+	background-color: $color-bg
+main
+	line-height: 1.5em
+	padding-bottom: 50px
+a
+	text-decoration: none
+	@include color-link
+	&:hover
+		transition-duration: 0.5s	
+.tel,.tel2
+	a,a:visited
+		color: $color-tel
+
+*,*::before,*::after 
+	box-sizing: border-box
+//
+//	line-height: 1.5em
+li
+	list-style: none
+img
+	display: block
+	margin: 0
+	padding: 0
+	font-family: 'object-fit: cover;'/9 /*IE対策*/
+	width: 100%
+@include ie
+	img
+		font-family: 'object-fit: cover;' /*IE対策*/
+
+h2,h3,h4,h5
+	font-weight: 700
+
+@include rodinb
+@include matissem
+
+
+/*--------------------------------------------------- */
+/* ユーティリティタグ
+/*--------------------------------------------------- */
+.flex
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.flexChild
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.maxWid
+	max-width: $pcsmall
+	width: 100%
+	margin: 0 auto
+
+@include pcsmall
+	.mbPad
+		padding-left: $mbPad
+		padding-right: $mbPad
+
+@include tab
+	.maxWid
+		max-width: initial
+	.mbInvi
+		display: none
+
+@include tabup
+	.pcInvi
+		display: none
+
+@include mbup
+	.pcInvi2
+		display: none
+		
+@include pcsmall
+	.pcInvi3
+		display: none
+
+@include mb
+	.mbInvi2
+		display: none
+
