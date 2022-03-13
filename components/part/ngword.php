@@ -35,42 +35,72 @@ $includeNgWord = preg_match($ngWord, $text);
 
 
 function ngWordForDm($text){
+require($_SERVER['DOCUMENT_ROOT']  . "/components/part/database.php");
+
+$stmt = $pdo->prepare('SELECT * FROM nglist');
+
+$stmt->execute();
+$rows = ''; 
+$ngGet=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
   global $includeNgWordForDm;
 $addSlash = "/";
+$ngDb = [];
 
+foreach ($ngGet as $key => $value) {
+  if($key==0){
+  $ngDb[] =$addSlash.$value['word'];
+
+  }elseif(end($ngGet)['word'] == $value['word']){
+  $ngDb[] =$value['word'].$addSlash;
+
+  }
+  else{
+  $ngDb[] =$value['word'];
+
+  }
+}
+
+// echo '<pre>';
+// var_dump($ngDb);
+// echo '</pre>';
 //NGWORDリスト
-$ngList = array(
-  $addSlash.
-  '欲しいものリスト',
-  'paypay',
-  '0円',
-  '０円',
-  'お金',
-  '欲しい物',
-  'アマゾン',
-  'amazon',
-  'あまぞん',
-  'お小遣い',
-  // 'リツイート',
-  // 'オフパコ',
-  // 'DM',
-  // 'RT',
-  // 'ファボ',
-  // 'らぶりつ',
-  // 'ラブリツ',
-  // 'ＤＭ',
-  // 'フォロバ',
-  // 'ﾌｫﾛﾊﾞ',
-  // 'Twitter',
-  // 'twitter',
-  // 'ついったー',
-  // 'ツイッター',
-  'http'
-  .$addSlash 
-);
+// $ngList = array(
+//   $addSlash.
+//   '欲しいものリスト',
+//   'paypay',
+//   '0円',
+//   '０円',
+//   'お金',
+//   '欲しい物',
+//   'アマゾン',
+//   'amazon',
+//   'あまぞん',
+//   'お小遣い',
+//   // 'リツイート',
+//   // 'オフパコ',
+//   // 'DM',
+//   // 'RT',
+//   // 'ファボ',
+//   // 'らぶりつ',
+//   // 'ラブリツ',
+//   // 'ＤＭ',
+//   // 'フォロバ',
+//   // 'ﾌｫﾛﾊﾞ',
+//   // 'Twitter',
+//   // 'twitter',
+//   // 'ついったー',
+//   // 'ツイッター',
+//   'http'
+//   .$addSlash 
+// );
 
 
+// echo '<pre>';
+// var_dump($ngList);
+// echo '</pre>';
 
+$ngList = $ngDb;
 $ngWord = implode('|',$ngList);
 $includeNgWordForDm = preg_match($ngWord, $text);
 }

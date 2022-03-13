@@ -13,9 +13,7 @@
 //Twitter REST API 呼び出し
   $code = $twObj->request( 'GET', "https://api.twitter.com/1.1/statuses/mentions_timeline.json",array("count"=>"50"));
   $aResData = json_decode($twObj->response["response"], true);
-echo '<pre>';
-var_dump($aResData);
-echo '</pre>';
+
 //配列を展開
   if(isset($aResData['errors']) && $aResData['errors'] != ''){
    echo "取得に失敗しました。";
